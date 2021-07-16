@@ -30,10 +30,10 @@ console.log(greeter2("LEARN Student"))
 // --------------------3) What will this log?
 
 var multBy2 = [4, 5, 6, 7, 8].map(value => value * 2)
-// console.log(multBy2)
+console.log(multBy2)
 
-// a) Your answer:
-// b) Verify and explain:
+// a) Your answer: --> the output will be a new array stored in the multBy2 variable. The new array will have the elements from the array that we are applying the .map method multiplied by 2. ---> [8, 10, 12, 14, 16]
+// b) Verify and explain: --> .map() is a built in array method that takes in an anonymous (i think) function as its argument. The anonymous function can take in 3 diferent parameters - 1) the actual value of the element, 2) the index position of that element, 3) the actual array. This built in method iterates through the array, and performs an action to each element of that array. The output will be a new array!
 
 
 // --------------------4) What will this log?
