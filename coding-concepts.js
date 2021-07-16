@@ -8,10 +8,10 @@
 // --------------------1) What will this log?
 
 var cohort = "Charlie 2021"
-// console.log(cohort.split(""))
+console.log(cohort.split(" "))
 
-// a) Your answer:
-// b) Verify and explain:
+// a) Your answer: the output will be an array with every individual character of the string stored in the cohort variable representing an element in the array.-> ['C', 'h', 'a', 'r','l', 'i', 'e', ' ','2', '0', '2', '1']
+// b) Verify and explain: .split() is a bultin method that works on strings. It takes in as an argument "how you want your string to be split up". another example -- if we passed in a space character as an argument, the split(' ') would split up the string where there is a space --> in this case the output would be [ 'Charlie', '2021' ]
 
 
 // --------------------2) What will this log?
@@ -19,10 +19,12 @@ var cohort = "Charlie 2021"
 const greeter = (name) => {
   `Hello, ${name}!`
 }
-// console.log(greeter("LEARN Student"))
+console.log(greeter("LEARN Student"))
 
-// a) Your answer:
-// b) Verify and explain:
+// a) Your answer: --> Undefined!!! I actually realized that halfway throuh my answer.... But before actually checking. Tricky tricky... -- No return statement
+// b) Verify and explain: -- Nice! Very proud of myself for catching this one. I think that since we are only passing in one argument, we can also use the arrow function syntax with the implicit (i think that is how you call it) return statement -- I really like how it looks :).
+const greeter2 = name => `Hello, ${name}!`
+console.log(greeter2("LEARN Student"))
 
 
 // --------------------3) What will this log?
