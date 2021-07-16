@@ -39,10 +39,10 @@ console.log(multBy2)
 // --------------------4) What will this log?
 
 var oddsOnly = [11, 12, 13, 14, 15].filter(value => value % 2 === 0)
-// console.log(oddsOnly)
+console.log(oddsOnly)
 
-// a) Your answer:
-// b) Verify and explain:
+// a) Your answer: -- [12, 14] 
+// b) Verify and explain: -- the .filter() built in array method takes in a function as its argument. Inside the filter method we can access the value of each element, the index position and the array itself. The function will determine a condition so we can filter out only the elements that meets this condition. In this case we are filtering all of the elements that when divided by 2 will have 0 as a remainder --> even numbers.
 
 
 // --------------------5) What will this log?
@@ -55,7 +55,7 @@ class Learn {
   }
 }
 var learnStudent = new Learn
-// console.log(learnStudent)
+console.log(learnStudent)
 
-// a) Your answer:
-// b) Verify and explain:
+// a) Your answer: -- i think that everything is correct except that when we are instantiating the class and storing the created object in the learnStudent variable we still need the have the parentesis after the class name (even if we are not passing in any arguments when intantiating it). var learnStudent = new Learn()
+// b) Verify and explain: I was wrong. But now I know that we do not need the parentesis when instantiating a class that does not take any arguments.
