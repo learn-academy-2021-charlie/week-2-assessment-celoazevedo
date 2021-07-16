@@ -87,36 +87,47 @@ var randomNouns2 = ["temperature", "database", "chopsticks", "mango", "deduction
 // Expected output: ["Temperature", "Database", "Chopsticks", "Mango", "Deduction"]
 
 
-describe('capitalizeThisArrayOfWordsPlease', () => {
-// a describe method that lists the name of the function OR naming of the particular test.
-    // a test method, nested within the describe block, that in plain words, describes that the function does.
-    test("returns an array with strings as elements, strings will be capitalized", () => {
+// describe('capitalizeThisArrayOfWordsPlease', () => {
+// // a describe method that lists the name of the function OR naming of the particular test.
+//     // a test method, nested within the describe block, that in plain words, describes that the function does.
+//     test("returns an array with strings as elements, strings will be capitalized", () => {
   
-      //an expect method, nested within the test block, calling on the hello() function, followed by the .toEqual() matcher that checks the expected output of the function return.
-      expect(capitalizeThisArrayOfWordsPlease(randomNouns1)).toEqual(["Streetlamp", "Potato", "Teeth", "Conclusion", "Nephew"])
-      expect(capitalizeThisArrayOfWordsPlease(randomNouns2)).toEqual(["Temperature", "Database", "Chopsticks", "Mango", "Deduction"])
-    })
-  })
+//       //an expect method, nested within the test block, calling on the hello() function, followed by the .toEqual() matcher that checks the expected output of the function return.
+//       expect(capitalizeThisArrayOfWordsPlease(randomNouns1)).toEqual(["Streetlamp", "Potato", "Teeth", "Conclusion", "Nephew"])
+//       expect(capitalizeThisArrayOfWordsPlease(randomNouns2)).toEqual(["Temperature", "Database", "Chopsticks", "Mango", "Deduction"])
+//     })
+//   })
 
 
 // b) Create the function that makes the test pass.
 // -- the same function should work. -- i did not come up with the logic myself but I do understand how the function is working.
-const capitalizeThisArrayOfWordsPlease = (arr) => {
-    return arr.map(element => element.charAt(0).toUpperCase() + element.slice(1))
-}
+
+// const capitalizeThisArrayOfWordsPlease = (arr) => {
+//     return arr.map(element => element.charAt(0).toUpperCase() + element.slice(1))
+// }
 
 
 // --------------------3) Create a function that takes in a string and logs the index of the first vowel.
 
 // create a function that takes a string as an argument
+// use toLowerCase() to convert all of the characters of the string to lowercase
 // use the split() string method to convert the string into an array 
 // iterate through the array -- using forEach() -- i dont need to return a new array
 // use conditionals to check if character is === 'a' or 'e' or 'i' or 'o' or 'u'
 // if it is --- return the index position of the character
 
+const firstVowel = (str) => {
+    let arr = str.toLowerCase().split('')
+    let indexPosition = 0;
+    arr.forEach((element, index) => {
+        if (element === 'a' || element === 'e' || element === 'i' || element === 'o' || element === 'u') {
+            indexPosition = index
+        }
+    })
+    return indexPosition
+}
 
 // a) Create a test with expect statements for each of the variables provided.
-
 
 var vowelTester1 = "learn"
 // Expected output: 1
@@ -125,6 +136,19 @@ var vowelTester2 = "academy"
 var vowelTester3 = "challenge"
 // Expected output: 2
 
-
+describe('firstVowel', () => {
+// a describe method that lists the name of the function OR naming of the particular test.
+    // a test method, nested within the describe block, that in plain words, describes that the function does.
+    test("returns a number with th value of the index position of the first vowel in the string", () => {
+  
+      //an expect method, nested within the test block, calling on the hello() function, followed by the .toEqual() matcher that checks the expected output of the function return.
+    //   expect(firstVowel(vowelTester1)).toEqual(1)
+      expect(firstVowel(vowelTester2)).toEqual(0)
+      expect(firstVowel(vowelTester3)).toEqual(2)
+    })
+  })
 
 // b) Create the function that makes the test pass.
+
+// first function did not work! I think that using forEach() here might not be a good idea since we are trying to return the first vowel. 
+/// shiit we might just be able to use the indexOf() on the string
