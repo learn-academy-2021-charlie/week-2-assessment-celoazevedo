@@ -60,7 +60,7 @@ Research and define the following terms to the best of your ability.
 
 1. React: React is a javascript library / framework with a lot of built in tools to assist developer in making 'fancy' interactive user interfaces. React is component based and allow us to right single page applications that loads quickly and only reloads components/data that needs to be reloaded, allowing the page to be fast and responsive.
 
-2. React lifecycle methods:
+2. React lifecycle methods: 
 
 3. React state:
 
