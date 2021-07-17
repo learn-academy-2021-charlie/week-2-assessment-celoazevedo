@@ -12,6 +12,26 @@
 // Run the file with the following command:
 // $ yarn jest
 
+///////////////
+
+// Process
+
+// 1: Write the test first!
+// 2: Run your testing suit to see a failing test
+// 3: Write the code
+// 4: Run your testing suit to see your test pass
+// 5: Refactor if necessary
+// This is known as Red-Green Refactor
+
+// -- describe() - Jest uses a method called describe() that runs other nested methods.
+// Here we provide an argument of a string, with the name of our function, or the name of this particular test.
+// -- test() or it() - test() or it() are methods nested within the describe's code block.
+// Here we provide an argument of string, which is a statement that explains in regular words what the test is doing.
+// -- expect() - expect() is a method that is nested within the test's code block. It calls the function being tested, passes any test-case arguments.
+// Here we follow it with a matcher ( Example: .toEqual() or .toBe() ) that compares the output.
+
+///////////////
+
 // Reminder: The test will call your function
 
 // --------------------1) Create a function that takes a number as an argument and decides if the number is evenly divisble by three or not.
@@ -116,16 +136,7 @@ var randomNouns2 = ["temperature", "database", "chopsticks", "mango", "deduction
 // use conditionals to check if character is === 'a' or 'e' or 'i' or 'o' or 'u'
 // if it is --- return the index position of the character
 
-const firstVowel = (str) => {
-    let arr = str.toLowerCase().split('')
-    let indexPosition = 0;
-    arr.forEach((element, index) => {
-        if (element === 'a' || element === 'e' || element === 'i' || element === 'o' || element === 'u') {
-            indexPosition = index
-        }
-    })
-    return indexPosition
-}
+/// !!! --- REMEMBER TO WRITE THE TEST FIRST --- !!!!!
 
 // a) Create a test with expect statements for each of the variables provided.
 
@@ -139,16 +150,31 @@ var vowelTester3 = "challenge"
 describe('firstVowel', () => {
 // a describe method that lists the name of the function OR naming of the particular test.
     // a test method, nested within the describe block, that in plain words, describes that the function does.
-    test("returns a number with th value of the index position of the first vowel in the string", () => {
+    test("returns a number with the value of the index position of the first vowel in the string", () => {
   
       //an expect method, nested within the test block, calling on the hello() function, followed by the .toEqual() matcher that checks the expected output of the function return.
-    //   expect(firstVowel(vowelTester1)).toEqual(1)
+      expect(firstVowel(vowelTester1)).toEqual(1)
       expect(firstVowel(vowelTester2)).toEqual(0)
       expect(firstVowel(vowelTester3)).toEqual(2)
     })
   })
 
-// b) Create the function that makes the test pass.
+// b) Create the function that makes the test pass. 
+// - a function that takes in a string and logs the index of the first vowel.
 
-// first function did not work! I think that using forEach() here might not be a good idea since we are trying to return the first vowel. 
-/// shiit we might just be able to use the indexOf() on the string
+// create a function that takes a string as an argument
+// use toLowerCase() to convert all of the characters of the string to lowercase
+// use the split() string method to convert the string into an array 
+// iterate through the array -- using a forloop (old school?)
+// use conditionals to check if character is === 'a' or 'e' or 'i' or 'o' or 'u'
+// if it is --- return the index position (indexOf()) of the character -- this will return the index value of the first vowel encountered while iterating over.
+
+const firstVowel = (str) => {
+  let arr = str.toLowerCase().split('')
+  console.log(arr)
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === 'a' || arr[i] === 'e' || arr[i] === 'i' || arr[i] === 'o' || arr[i] === 'u') {
+      return arr.indexOf(arr[i])
+    }
+  }
+}
